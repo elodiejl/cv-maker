@@ -38,6 +38,12 @@ jobs:
       - name: Build the app
         run: pnpm run build
 
+      - name: Test the connection
+        run: |
+              pnpm run preview &
+              sleep 5
+              curl -I http://localhost:4173
+
       # - name: Setup Bun
       #   uses: oven-sh/setup-bun@v1
 
